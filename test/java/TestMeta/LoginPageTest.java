@@ -1,6 +1,7 @@
 package TestMeta;
 
 import TestMeta.pageObj.LoginPage;
+import TestMeta.pageObj.ResultsPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -19,7 +20,6 @@ public class LoginPageTest {
         PageFactory.initElements(driver, LoginPage.class);
         LoginPage loginpage = new LoginPage(driver);
 
-
-
+        ResultsPage resultsPage = loginpage.login("demotest", "qwe123");
     }
 }
