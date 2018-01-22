@@ -3,12 +3,16 @@ package TestMeta.pageObj;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
 public class LoginPage {
     private WebDriver driver;
 
+    @FindBy(id = "login")
     private WebElement login;
+    @FindBy(id = "password")
     private WebElement password;
+    @FindBy(id = "subm")
     private WebElement subm;
 
     public LoginPage(WebDriver driver){
