@@ -21,7 +21,7 @@ public class javaScriptExecution {
         JavascriptExecutor js = (JavascriptExecutor) driver.findElement(By.name("q"));
         js.executeScript("alert('Hello. How are you&);");
 
-JavascriptExecutor
+//JavascriptExecutor;
 
 
 

@@ -49,12 +49,11 @@ public class Waits {
         WebElement btn = driver.findElement(By.name("btnK"));
         btn.click();
 
-        new WebDriverWait(driver, 10).until(
+        /*new WebDriverWait(driver, 10).until(
                 ExpectedConditions.invisibilityOfElementLocated(
                         By.id("hplogo")
                 )
-        );
-
+        );*/
         try{
            // Thread.sleep(1000);
             WebElement logo = driver.findElement(By.id("hplogo"));
