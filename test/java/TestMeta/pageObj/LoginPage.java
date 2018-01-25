@@ -7,14 +7,14 @@ import org.openqa.selenium.support.FindBy;
 
 public class LoginPage {
     private WebDriver driver;
-
+/*
     @FindBy(id = "login")
     private WebElement login;
     @FindBy(id = "password")
     private WebElement password;
     @FindBy(id = "subm")
     private WebElement subm;
-
+*/
     public LoginPage(WebDriver driver){
          this.driver= driver;
     }
@@ -34,5 +34,9 @@ public class LoginPage {
         this.enterCredential(userLogin, userPassword);
         this.clickSubmitButon();
         return new ResultsPage(this.driver);
+    }
+
+    public void OpenMail(){
+        driver.findElement(By.xpath(".//tr//td/a")).click();
     }
 }
