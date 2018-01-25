@@ -1,7 +1,6 @@
 package TestMeta;
 
 import TestMeta.pageObj.LoginPage;
-import TestMeta.pageObj.OpenPage;
 import TestMeta.pageObj.ResultsPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -26,9 +25,7 @@ public class LoginPageTest {
     public void LoginUserNameFail(){
 
         LoginPage loginpage = new LoginPage(driver);
-
         ResultsPage resultsPage = loginpage.login(userP, userP);
-       // System.out.println("************USER NAME**************" + resultsPage.getfailmessage() + "******");
         Assert.assertEquals(resultsPage.getfailmessage(), "Введенный пароль неверен", "Login Failds");
     }
 
@@ -36,9 +33,7 @@ public class LoginPageTest {
     public void LoginUserPasswordFail(){
 
         LoginPage loginpage = new LoginPage(driver);
-
         ResultsPage resultsPage = loginpage.login(userN, userN);
-       // System.out.println("************USER NAME**************" + resultsPage.getfailmessage() + "******");
         Assert.assertEquals(resultsPage.getfailmessage(), "Введенный пароль неверен", "Login Failds");
     }
 
@@ -48,21 +43,20 @@ public class LoginPageTest {
         LoginPage loginpage = new LoginPage(driver);
 
         ResultsPage resultsPage = loginpage.login(userN, userP);
-       // System.out.println("************SEND MAIL**************" + resultsPage.getSendMail() + "******");
        Assert.assertEquals(resultsPage.getSendMail(), "Написати листа    ", "User name does not match");
     }
     @Test(priority = 3)
     public void CheckMail(){
         LoginPage loginpage = new LoginPage(driver);
         ResultsPage resultsPage = loginpage.login(userN, userP);
-        loginpage.OpenMail();
-         System.out.println("************SEND MAIL**************" + resultsPage.getTextMail()+ "******");
-        //Assert.assertEquals(resultsPage.getSendMail(), "Написати листа    ", "User name does not match");
-    }/*
+        resultsPage.OpenMail();
+        System.out.println("************SEND MAIL**************" + resultsPage.getTextMail()+ "******");
+        Assert.assertTrue(resultsPage.getTextMail().contains("Test Demo"),"User name does not found");
+    }
     @AfterMethod
     public void afterClass()
     {
         driver.quit();
-    }*/
+    }
 }
 
